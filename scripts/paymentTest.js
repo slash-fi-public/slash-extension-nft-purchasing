@@ -7,8 +7,8 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay * 10
 const nftAddress = '0xcDAca389D68f88aaB259C0f88d39f1677C8b09E0'; // goerli
 const nftAbi = require('../abi/ERC1155Demo.json');
 
-const extAddress = '0x516AB6054a3f968ee44AD736890137Acf1ba3008'; // goerli
 // const extAddress = '0x998abeb3E57409262aE5b751f60747921B33613E';    // local
+const extAddress = '0x516AB6054a3f968ee44AD736890137Acf1ba3008'; // goerli
 const extAbi = require('../abi/PurchaseNftExtension.json');
 
 const slashAddress = '0xC71A13aE98f0aDD70B84f0C6b46B48787EE3Ec86';
@@ -37,7 +37,6 @@ async function main() {
     );
 
     res = await slash.submitTransaction(
-    // res = await ext.checkParam(
             [
                 "0x17db71f034839f206fd5f4209745545f",
                 "0x6AD196dBcd43996F17638B924d2fdEDFF6Fdd677",
@@ -58,17 +57,7 @@ async function main() {
 
     console.log(res);
 
-    // res = await ext.receivePayment(
-    //     nftAddress,
-    //     0,
-    //     "",
-    //     "",
-    //     info
-    // );
-    // console.log(res);
-
-    // res = await ext.purchaseNft(info);
-    // console.log(res);
+    await sleep(10);
 
     res = await nft.balanceOf(recipient, tokenId);
     console.log(res);
