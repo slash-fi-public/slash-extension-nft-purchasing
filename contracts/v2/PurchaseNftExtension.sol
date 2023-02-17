@@ -22,7 +22,7 @@ contract PurchaseNftExtension is ISlashCustomPlugin, Ownable, IERC1155Receiver {
     function receivePayment(
         address receiveToken,
         uint256 amount,
-        string calldata,
+        bytes calldata,
         string calldata,
         bytes calldata  reserved
     ) external payable override {
