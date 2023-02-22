@@ -141,9 +141,9 @@
         "type": "uint256"
       },
       {
-        "internalType": "string",
+        "internalType": "bytes",
         "name": "",
-        "type": "string"
+        "type": "bytes"
       },
       {
         "internalType": "string",
