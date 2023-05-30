@@ -88,8 +88,17 @@ contract PurchaseNftExtension is ISlashCustomPlugin, Ownable, IERC1155Receiver {
     {
         return 2;
     }
-    
 
+    /**
+     * @dev fallback and receive function
+     * Slash will check this contract can receive ETH or not. (send 0 ETH)
+     * Slash extension should be implemented payable fallback and receive function
+     */
+    receive() external payable {
+    }
+    fallback() external payable {
+    }
+    
     // ERC1155 related functions
     function onERC1155Received(
         address, /*operator*/
